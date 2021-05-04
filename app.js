@@ -35,7 +35,7 @@ const limiter = rateLimit({
 app.use(limiter);
 app.use(helmet());
 app.use(cors({
-  origin: ['http://localhost:3000', 'http://mesto.toppavel.nomoredomains.icu', 'https://mesto.toppavel.nomoredomains.icu'],
+  origin: ['http://localhost:3000', 'http://mov-explorer.toppavel.nomoredomains.icu', 'https://mov-explorer.toppavel.nomoredomains.icu'],
   // origin: '*',
 }));
 app.use(bodyParser.json());
