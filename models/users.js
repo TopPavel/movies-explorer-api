@@ -32,7 +32,7 @@ function findUserByCredentials(email, password) {
     .then((user) => bcrypt.compare(password, user.password)
       .then((matched) => {
         if (!matched) {
-          return Promise.reject(createError(401));
+          return Promise.reject(createError(401, { message: 'Invalid login or password' }));
         }
 
         return user;

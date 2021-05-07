@@ -18,7 +18,7 @@ router.post('/', celebrate({
     image: Joi.string().required().uri({ scheme: ['http', 'https', 'sftp'] }),
     trailer: Joi.string().required().uri({ scheme: ['http', 'https', 'sftp'] }),
     thumbnail: Joi.string().required().uri({ scheme: ['http', 'https', 'sftp'] }),
-    movieId: Joi.string().required().hex().length(24),
+    movieId: Joi.number().required(),
     nameRU: Joi.string().required(),
     nameEN: Joi.string().required(),
   }).unknown(true),
