@@ -18,20 +18,20 @@ router.post('/', celebrate({
     year: Joi.string().required(),
     description: Joi.string().required(),
     image: Joi.string().required().custom((v, helper) => {
-      if (validator.isURL(v)){
-        return v
+      if (validator.isURL(v)) {
+        return v;
       }
       return helper.message('Field \'image\' has incorrect link format!');
     }),
     trailer: Joi.string().required().custom((v, helper) => {
-      if (validator.isURL(v)){
-        return v
+      if (validator.isURL(v)) {
+        return v;
       }
       return helper.message('Field \'trailer\' has incorrect link format!');
     }),
     thumbnail: Joi.string().required().custom((v, helper) => {
-      if (validator.isURL(v)){
-        return v
+      if (validator.isURL(v)) {
+        return v;
       }
       return helper.message('Field \'thumbnail\' has incorrect link format!');
     }),
