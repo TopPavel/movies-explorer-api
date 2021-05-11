@@ -22,7 +22,6 @@ mongoose.connect(NODE_ENV === 'production' ? DB_CONFIG : 'mongodb://localhost:27
   useUnifiedTopology: true,
 });
 
-app.use(limiter);
 app.use(helmet());
 app.use(cors({
   origin: ['http://localhost:3000', 'http://mov-explorer.toppavel.nomoredomains.icu', 'https://mov-explorer.toppavel.nomoredomains.icu'],
@@ -33,6 +32,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 
 app.use(requestLogger);
+app.use(limiter);
 app.use('/', router);
 app.use(errorLogger);
 app.use(celebrateErrors);
